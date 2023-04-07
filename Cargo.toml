@@ -1,0 +1,7 @@
+[package]
+name="rust_spinner"
+version = "1.0.0"
+
+
+
+[dependencies]
