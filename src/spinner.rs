@@ -12,7 +12,7 @@ pub mod spinner {
         io::stdout().flush().unwrap();
     }
     
-    pub fn start_spinner(frames: Vec<String>, message: String, stop_spinner: Arc<Mutex<bool>>) -> thread::JoinHandle<()> {
+    pub fn start_spinner(frames: Vec<String>, message: String, speed : u64, stop_spinner: Arc<Mutex<bool>>) -> thread::JoinHandle<()> {
         thread::spawn(move || {
             let mut frame_index = 0;
 
@@ -20,7 +20,7 @@ pub mod spinner {
                 print!("\r{} {}", message, frames[frame_index]);
                 std::io::stdout().flush().unwrap();
                 frame_index = (frame_index + 1) % frames.len();
-                thread::sleep(Duration::from_millis(100));
+                thread::sleep(Duration::from_millis(speed));
             }
             io::stdout().flush().unwrap();
         })

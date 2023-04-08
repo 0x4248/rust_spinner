@@ -6,7 +6,7 @@ use spinner::spinner::spinner_cleanup;
 
 fn main() {
     let stop_spinner = Arc::new(Mutex::new(false));
-    let spinner_thread = start_spinner(vec!["-", "\\", "|", "/"].iter().map(|s| s.to_string()).collect(), "Loading".to_string(), stop_spinner.clone());
+    let spinner_thread = start_spinner(vec!["-", "\\", "|", "/"].iter().map(|s| s.to_string()).collect(), "Loading".to_string(), 100 , stop_spinner.clone());
     
     thread::sleep(std::time::Duration::from_secs(5));
     
