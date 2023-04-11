@@ -1,5 +1,5 @@
 # Rust Spinner
-A simple spinner for Rust.
+A simple spinner for Rust that is customisable and easy to use.
 
 ## Usage
 
